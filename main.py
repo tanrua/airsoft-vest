@@ -8,10 +8,15 @@ from button_handler import ButtonHandler
 from activity_monitor import ActivityMonitor
 from game_state_manager import *  # contains GameStateManager and state constants
 
+PIN_DISPLAY_CLK = 29
+PIN_DISPLAY_DIO = 27
+PIN_LEDS = 1
+PIN_BUTTON = 31
+
 # === Hardware Setup ===
-tm = tm1637.TM1637(clk=Pin(5), dio=Pin(4))  # Adjust pins as needed
-leds = LEDController()
-button = ButtonHandler()
+tm = tm1637.TM1637(clk=Pin(PIN_DISPLAY_CLK), dio=Pin(PIN_DISPLAY_DIO))  # Adjust pins as needed
+leds = LEDController(PIN_LEDS, 5)
+button = ButtonHandler(PIN_BUTTON)
 activity_monitor = ActivityMonitor()
 game = GameStateManager()
 
