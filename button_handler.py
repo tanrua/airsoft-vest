@@ -2,7 +2,7 @@ from machine import Pin
 import time
 
 class ButtonHandler:
-    def __init__(self, pin_number=3):
+    def __init__(self, pin_number=31):
         self.button = Pin(pin_number, Pin.IN, Pin.PULL_UP)
 
     def read_button(self):
